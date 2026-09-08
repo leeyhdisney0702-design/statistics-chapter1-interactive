@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Chapter 1 何謂統計學？互動式學習網站">
+  <meta name="robots" content="noindex,nofollow">
   <title>STAT/01｜何謂統計學？</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,7 +23,16 @@
       <a href="#big-data">1.3 大型資料</a>
       <a href="#computer">1.4 統計與電腦</a>
     </nav>
-    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav">選單</button>
+    <div class="header-actions">
+      <label class="chapter-picker" for="chapterSelect"><span>選擇章節</span>
+        <select id="chapterSelect" aria-label="選擇統計學章節">
+          <option value="index.html" selected>Chapter 1</option>
+          <option value="chapter4/index.html">Chapter 4</option>
+          <option value="chapter5/index.html">Chapter 5</option>
+        </select>
+      </label>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav">選單</button>
+    </div>
   </header>
   <nav class="mobile-nav" id="mobileNav" aria-label="行動版章節導覽" hidden>
     <a href="#concepts">1.1 統計觀念</a>

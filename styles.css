@@ -46,6 +46,9 @@ a { color: inherit; }
 .desktop-nav { display: flex; align-items: center; gap: 30px; }
 .desktop-nav a { text-decoration: none; font-weight: 700; font-size: 13px; }
 .desktop-nav a:hover { color: var(--blue); }
+.header-actions { display: flex; align-items: center; gap: 14px; }
+.chapter-picker { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 10px; font-weight: 850; letter-spacing: .08em; white-space: nowrap; }
+.chapter-picker select { min-height: 38px; padding: 0 30px 0 11px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper-bright); font: 750 13px/1 Inter, ui-sans-serif, "Noto Sans TC", "Microsoft JhengHei", sans-serif; cursor: pointer; }
 .menu-button { display: none; border: 0; background: transparent; font-weight: 800; }
 .mobile-nav { position: fixed; z-index: 79; top: 76px; left: 0; right: 0; padding: 12px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); }
 .mobile-nav a { display: block; padding: 13px 0; text-decoration: none; font-weight: 750; border-bottom: 1px solid var(--line); }
@@ -260,7 +263,7 @@ footer { padding: 34px max(24px, calc((100vw - 1180px) / 2)); display: flex; jus
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
 @keyframes pulse { 50% { transform: scale(1.25); opacity: .72; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
 
@@ -285,6 +288,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 680px) {
   :root { --content: calc(100vw - 32px); }
   .site-header { height: 66px; padding: 0 16px; }
+  .brand-copy, .chapter-picker span { display: none; }
+  .chapter-picker select { min-height: 36px; max-width: 116px; padding-left: 9px; font-size: 12px; }
+  .header-actions { gap: 7px; }
   .mobile-nav { top: 66px; }
   html { scroll-padding-top: 74px; }
   .hero { min-height: auto; padding: 70px 16px 90px; gap: 48px; }

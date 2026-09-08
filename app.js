@@ -31,6 +31,10 @@
 
   var menuButton = $("#menuButton");
   var mobileNav = $("#mobileNav");
+  var chapterSelect = $("#chapterSelect");
+  chapterSelect.addEventListener("change", function () {
+    window.location.assign(chapterSelect.value);
+  });
   menuButton.addEventListener("click", function () {
     var open = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", String(!open));
