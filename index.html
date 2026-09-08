@@ -3,334 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chapter 1 何謂統計學？互動式學習網站">
+  <meta name="description" content="互動式統計學教材入口，可選擇 Chapter 1、4、5。">
   <meta name="robots" content="noindex,nofollow">
-  <title>STAT/01｜何謂統計學？</title>
+  <title>Statistics Interactive｜互動式統計學</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">跳至主要內容</a>
-  <div class="progress-track" aria-hidden="true"><span id="readingProgress"></span></div>
+  <a class="skip-link" href="#chapters">前往章節選擇</a>
 
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="回到首頁">
-      <span class="brand-mark">S/01</span>
+    <a class="brand" href="index.html" aria-label="互動式統計學首頁">
+      <span class="brand-mark">S/I</span>
       <span class="brand-copy">STATISTICS<br><b>INTERACTIVE</b></span>
     </a>
-    <nav class="desktop-nav" aria-label="章節導覽">
-      <a href="#concepts">1.1 統計觀念</a>
-      <a href="#business">1.2 商業應用</a>
-      <a href="#big-data">1.3 大型資料</a>
-      <a href="#computer">1.4 統計與電腦</a>
-    </nav>
-    <div class="header-actions">
-      <label class="chapter-picker" for="chapterSelect"><span>選擇章節</span>
-        <select id="chapterSelect" aria-label="選擇統計學章節">
-          <option value="index.html" selected>Chapter 1</option>
-          <option value="chapter4/index.html">Chapter 4</option>
-          <option value="chapter5/index.html">Chapter 5</option>
-        </select>
-      </label>
-      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav">選單</button>
-    </div>
+    <a class="chapter-shortcut" href="#chapters">選擇 Chapter <span aria-hidden="true">↓</span></a>
   </header>
-  <nav class="mobile-nav" id="mobileNav" aria-label="行動版章節導覽" hidden>
-    <a href="#concepts">1.1 統計觀念</a>
-    <a href="#business">1.2 商業應用</a>
-    <a href="#big-data">1.3 大型資料</a>
-    <a href="#computer">1.4 統計與電腦</a>
-  </nav>
 
-  <main id="main">
-    <section class="hero" id="top">
+  <main>
+    <section class="cover-hero" aria-labelledby="coverTitle">
       <div class="hero-copy reveal">
-        <p class="eyebrow">CHAPTER 01 · 互動教材</p>
-        <h1>何謂<br><em>統計學？</em></h1>
-        <p class="hero-lead">統計不是一堆公式，而是一套把資料變成可靠判斷的方法。這一章，從一個問題開始。</p>
-        <a class="primary-button" href="#data-story">開始探索 <span aria-hidden="true">↘</span></a>
+        <p class="eyebrow">INTERACTIVE LEARNING COLLECTION</p>
+        <h1 id="coverTitle">互動式<br><em>統計學</em></h1>
+        <p class="hero-lead">從觀念建立、數值描述，到資料蒐集與抽樣。選一個章節，透過操作、觀察與即時回饋開始學習。</p>
+        <a class="primary-button" href="#chapters">瀏覽學習章節 <span aria-hidden="true">↘</span></a>
       </div>
-      <div class="hero-visual reveal" aria-label="從雜亂資料找出規律的示意圖">
-        <div class="signal-card">
-          <div class="signal-label"><span>RAW SIGNAL</span><b>24 observations</b></div>
-          <div class="dot-field" id="heroDots" aria-hidden="true"></div>
-          <div class="signal-result"><span>找到規律</span><strong>平均 ≈ 4.8</strong></div>
-        </div>
-        <p class="margin-note">問對問題<br>才看得見訊號</p>
+
+      <div class="cover-art reveal" aria-hidden="true">
+        <div class="art-grid"></div>
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-number">3</div>
+        <p><b>AVAILABLE</b><span>LEARNING<br>CHAPTERS</span></p>
+        <i class="dot dot-one"></i><i class="dot dot-two"></i><i class="dot dot-three"></i>
       </div>
-      <div class="hero-index" aria-hidden="true">01</div>
     </section>
 
-    <section class="story-section" id="data-story">
+    <section class="chapter-library" id="chapters" aria-labelledby="chapterTitle">
       <div class="section-heading reveal">
-        <p class="eyebrow">THE CORE IDEA</p>
-        <h2>資料不會自己說話。</h2>
-        <p>依序點擊三個階段，觀察一筆筆紀錄如何成為可以採取行動的資訊。</p>
-      </div>
-      <div class="story-flow reveal" role="group" aria-label="資料、統計、資訊互動流程">
-        <button class="flow-step active" type="button" data-story-step="0" aria-pressed="true">
-          <span>01</span><strong>資料</strong><small>原始觀察</small>
-        </button>
-        <div class="flow-line" aria-hidden="true"></div>
-        <button class="flow-step" type="button" data-story-step="1" aria-pressed="false">
-          <span>02</span><strong>統計</strong><small>整理與推論</small>
-        </button>
-        <div class="flow-line" aria-hidden="true"></div>
-        <button class="flow-step" type="button" data-story-step="2" aria-pressed="false">
-          <span>03</span><strong>資訊</strong><small>理解與決策</small>
-        </button>
-      </div>
-      <div class="story-output reveal" id="storyOutput" aria-live="polite"></div>
-    </section>
-
-    <section class="chapter-section" id="concepts">
-      <div class="chapter-number">1.1</div>
-      <div class="section-heading reveal">
-        <p class="eyebrow">IMPORTANT CONCEPTS</p>
-        <h2>先描述眼前，再推論未知。</h2>
-        <p>兩種統計方法回答不同問題；關鍵在於你手上的資料，以及你真正想知道的對象。</p>
+        <p class="eyebrow">COURSE CONTENTS</p>
+        <h2 id="chapterTitle">選擇 Chapter</h2>
+        <p>點選卡片後，才會進入該章的完整互動內容。</p>
       </div>
 
-      <div class="method-switcher reveal">
-        <div class="segmented" role="tablist" aria-label="統計方法">
-          <button class="method-tab active" type="button" role="tab" aria-selected="true" data-method="descriptive">敘述統計</button>
-          <button class="method-tab" type="button" role="tab" aria-selected="false" data-method="inferential">推論統計</button>
-        </div>
-        <div class="method-panel">
-          <div>
-            <p class="panel-kicker" id="methodKicker">WHAT HAPPENED?</p>
-            <h3 id="methodTitle">把已有資料整理成看得懂的樣子</h3>
-            <p id="methodBody">用圖表、平均數、中位數或百分比，精準描述手上這一批資料；結論不超出資料本身。</p>
+      <div class="chapter-grid">
+        <a class="chapter-card chapter-one reveal" href="chapter1/index.html">
+          <span class="card-status">AVAILABLE</span>
+          <span class="chapter-number">01</span>
+          <div class="chapter-copy">
+            <p>CHAPTER 01</p>
+            <h3>何謂統計學？</h3>
+            <span>建立統計觀念，認識商業應用、大型資料，以及電腦如何協助分析。</span>
           </div>
-          <div class="mini-chart" id="methodChart" aria-label="統計方法示意圖"></div>
-          <div class="method-example">
-            <span>例</span>
-            <p id="methodExample">整理本班 42 位同學的考試成績，算出平均分數與分布。</p>
-          </div>
-        </div>
-      </div>
+          <ul aria-label="本章主題">
+            <li>統計觀念</li><li>商業應用</li><li>大型資料</li>
+          </ul>
+          <b class="enter-label">進入章節 <span aria-hidden="true">→</span></b>
+        </a>
 
-      <div class="term-grid reveal">
-        <article><span>POPULATION</span><h3>母體</h3><p>研究者真正感興趣的全部對象。</p></article>
-        <article><span>SAMPLE</span><h3>樣本</h3><p>從母體中實際取得資料的一部分。</p></article>
-        <article><span>PARAMETER</span><h3>參數</h3><p>描述母體特性的數值，通常未知。</p></article>
-        <article><span>STATISTIC</span><h3>統計量</h3><p>從樣本算出的數值，用來推估參數。</p></article>
-      </div>
+        <a class="chapter-card chapter-four reveal" href="chapter4/index.html">
+          <span class="card-status">AVAILABLE</span>
+          <span class="chapter-number">04</span>
+          <div class="chapter-copy">
+            <p>CHAPTER 04</p>
+            <h3>數值敘述法</h3>
+            <span>操作平均數、標準差、百分位數、迴歸與損益平衡，讀懂資料輪廓。</span>
+          </div>
+          <ul aria-label="本章主題">
+            <li>中央位置</li><li>變異性</li><li>線性關係</li>
+          </ul>
+          <b class="enter-label">進入章節 <span aria-hidden="true">→</span></b>
+        </a>
 
-      <section class="lab sampling-lab reveal" aria-labelledby="samplingTitle">
-        <div class="lab-intro">
-          <p class="eyebrow">MINI LAB 01</p>
-          <h3 id="samplingTitle">抽一個樣本，能多接近真相？</h3>
-          <p>下方 100 個點代表母體，每個點都有一個「每週購買飲料杯數」。調整樣本大小並重抽，看看樣本平均如何變動。</p>
-          <label for="sampleSize">樣本大小 <output id="sampleSizeOutput">20</output></label>
-          <input id="sampleSize" type="range" min="5" max="80" step="5" value="20">
-          <button class="secondary-button" id="resampleButton" type="button">重新抽樣</button>
-        </div>
-        <div class="sampling-stage">
-          <div class="population-grid" id="populationGrid" aria-label="母體與抽中樣本視覺化"></div>
-          <div class="metric-row">
-            <div><span>母體平均（真值）</span><strong id="populationMean">—</strong></div>
-            <div><span>樣本平均（估計）</span><strong id="sampleMean">—</strong></div>
-            <div><span>估計誤差</span><strong id="sampleError">—</strong></div>
+        <a class="chapter-card chapter-five reveal" href="chapter5/index.html">
+          <span class="card-status">AVAILABLE</span>
+          <span class="chapter-number">05</span>
+          <div class="chapter-copy">
+            <p>CHAPTER 05</p>
+            <h3>資料的蒐集與抽樣</h3>
+            <span>比較資料蒐集方法與抽樣設計，辨識抽樣誤差、偏差與無回應問題。</span>
           </div>
-          <p class="lab-note" id="samplingNote" aria-live="polite"></p>
-        </div>
-      </section>
-
-      <section class="case-study reveal" aria-labelledby="caseTitle">
-        <div class="case-copy">
-          <p class="eyebrow">DECISION CASE</p>
-          <h3 id="caseTitle">校園飲料專售合約，值得簽嗎？</h3>
-          <p>我們保留原簡報的決策精神，將案例改造成即時計算器。用 500 人調查推估全校需求，再把價格、成本與分潤放進決策。</p>
-          <div class="case-assumption">
-            <span>母體</span><b>50,000 位學生</b>
-            <span>營運</span><b>每年 40 週</b>
-            <span>校方分潤</span><b>35%</b>
-          </div>
-        </div>
-        <div class="case-calculator">
-          <label>樣本每人每週平均杯數 <output id="cupsOutput">2.30</output>
-            <input id="cupsInput" type="range" min="0.5" max="4" step="0.05" value="2.3">
-          </label>
-          <label>每杯售價（$） <output id="priceOutput">1.50</output>
-            <input id="priceInput" type="range" min="0.8" max="3" step="0.1" value="1.5">
-          </label>
-          <label>每杯成本（$） <output id="costOutput">0.60</output>
-            <input id="costInput" type="range" min="0.2" max="1.5" step="0.05" value="0.6">
-          </label>
-          <div class="decision-result">
-            <span>推估年利潤</span>
-            <strong id="profitResult">—</strong>
-            <p id="profitRange">—</p>
-            <b id="decisionBadge">—</b>
-          </div>
-        </div>
-      </section>
-
-      <div class="confidence-block reveal">
-        <div>
-          <p class="eyebrow">UNCERTAINTY</p>
-          <h3>信賴水準與顯著水準，是風險語言。</h3>
-          <p>信賴水準越高，估計區間通常越寬；顯著水準 α 則是我們願意承擔的錯誤警報風險。</p>
-        </div>
-        <div class="confidence-control">
-          <label for="confidenceLevel">信賴水準</label>
-          <div class="segmented compact" id="confidenceLevel" role="group" aria-label="選擇信賴水準">
-            <button type="button" data-confidence="90">90%</button>
-            <button class="active" type="button" data-confidence="95">95%</button>
-            <button type="button" data-confidence="99">99%</button>
-          </div>
-          <div class="interval-line" aria-label="信賴區間寬度示意">
-            <span class="interval-band" id="intervalBand"></span><i></i>
-          </div>
-          <p id="confidenceText">95% 信賴水準 ↔ α = 5%</p>
-        </div>
+          <ul aria-label="本章主題">
+            <li>蒐集方法</li><li>抽樣計畫</li><li>誤差偏差</li>
+          </ul>
+          <b class="enter-label">進入章節 <span aria-hidden="true">→</span></b>
+        </a>
       </div>
-    </section>
-
-    <section class="chapter-section business-section" id="business">
-      <div class="chapter-number">1.2</div>
-      <div class="section-heading reveal">
-        <p class="eyebrow">BUSINESS APPLICATIONS</p>
-        <h2>統計的價值，在於改變決策。</h2>
-        <p>選一個職能，看看同樣的「問題—資料—方法—行動」如何落在不同商業情境。</p>
-      </div>
-      <div class="application-browser reveal">
-        <div class="application-tabs" role="tablist" aria-label="商業職能">
-          <button class="active" type="button" data-app="marketing">行銷</button>
-          <button type="button" data-app="finance">財務</button>
-          <button type="button" data-app="hr">人資</button>
-          <button type="button" data-app="operations">作業管理</button>
-          <button type="button" data-app="accounting">會計</button>
-          <button type="button" data-app="economics">經濟</button>
-        </div>
-        <article class="application-card" aria-live="polite">
-          <div class="app-index" id="appIndex">01</div>
-          <p class="panel-kicker" id="appQuestionLabel">QUESTION</p>
-          <h3 id="appQuestion">哪一個廣告版本真的提高轉換率？</h3>
-          <div class="app-pipeline">
-            <div><span>資料</span><p id="appData">A/B 兩組曝光、點擊與購買紀錄</p></div>
-            <div><span>方法</span><p id="appMethod">比例比較與假設檢定</p></div>
-            <div><span>行動</span><p id="appAction">選擇有效版本，而非只看表面差異</p></div>
-          </div>
-          <p class="app-takeaway" id="appTakeaway">重點：差異存在，不代表差異大到足以排除隨機波動。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="chapter-section data-section" id="big-data">
-      <div class="chapter-number">1.3</div>
-      <div class="section-heading reveal">
-        <p class="eyebrow">LARGE REAL-WORLD DATASETS</p>
-        <h2>資料變大，問題不只在「多」。</h2>
-        <p>大型真實資料往往同時具有大量、高速、多樣、品質不一等特性。分析前，先確認資料能不能被信任。</p>
-      </div>
-      <div class="five-vs reveal" aria-label="大型資料的五個面向">
-        <article><b>01</b><h3>Volume</h3><p>資料量</p><small>百萬筆交易</small></article>
-        <article><b>02</b><h3>Velocity</h3><p>產生速度</p><small>即時感測流</small></article>
-        <article><b>03</b><h3>Variety</h3><p>格式多樣</p><small>表格、文字、影像</small></article>
-        <article><b>04</b><h3>Veracity</h3><p>資料可信度</p><small>缺值、重複、異常</small></article>
-        <article><b>05</b><h3>Value</h3><p>能否創造價值</p><small>改善決策</small></article>
-      </div>
-
-      <section class="lab data-lab reveal" aria-labelledby="dataLabTitle">
-        <div class="lab-toolbar">
-          <div>
-            <p class="eyebrow">MINI LAB 02</p>
-            <h3 id="dataLabTitle">240 筆交易，清理前後差多少？</h3>
-          </div>
-          <div class="segmented compact" role="group" aria-label="資料版本">
-            <button class="active" type="button" data-data-mode="raw">原始資料</button>
-            <button type="button" data-data-mode="clean">清理後</button>
-          </div>
-        </div>
-        <div class="data-kpis">
-          <div><span>可用紀錄</span><strong id="recordCount">—</strong></div>
-          <div><span>平均客單</span><strong id="averageOrder">—</strong></div>
-          <div><span>異常／重複</span><strong id="issueCount">—</strong></div>
-        </div>
-        <div class="data-workbench">
-          <div>
-            <div class="chart-heading"><span>各品類營收</span><small id="chartModeLabel">含異常值</small></div>
-            <div class="bar-chart" id="categoryChart" aria-label="各品類營收長條圖"></div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <caption>資料片段（顯示前 7 筆）</caption>
-              <thead><tr><th>ID</th><th>品類</th><th>金額</th><th>狀態</th></tr></thead>
-              <tbody id="transactionRows"></tbody>
-            </table>
-          </div>
-        </div>
-        <p class="lab-note" id="dataInsight">原始平均可能被少數異常交易拉高。切換到「清理後」觀察決策指標如何改變。</p>
-      </section>
-    </section>
-
-    <section class="chapter-section computer-section" id="computer">
-      <div class="chapter-number">1.4</div>
-      <div class="section-heading reveal">
-        <p class="eyebrow">STATISTICS & COMPUTERS</p>
-        <h2>電腦負責運算，人負責判斷。</h2>
-        <p>軟體能在瞬間處理大量資料，但問題定義、偏誤辨識與結論解讀，仍需要統計思維。</p>
-      </div>
-      <div class="workflow reveal" aria-label="電腦輔助統計工作流程">
-        <div><span>01</span><b>匯入</b><small>取得資料</small></div><i>→</i>
-        <div><span>02</span><b>清理</b><small>修正品質</small></div><i>→</i>
-        <div><span>03</span><b>描述</b><small>找出模式</small></div><i>→</i>
-        <div><span>04</span><b>推論</b><small>衡量不確定性</small></div><i>→</i>
-        <div><span>05</span><b>溝通</b><small>支持決策</small></div>
-      </div>
-
-      <section class="lab computer-lab reveal" aria-labelledby="computerLabTitle">
-        <div class="computer-input">
-          <p class="eyebrow">MINI LAB 03</p>
-          <h3 id="computerLabTitle">把一列數字交給電腦</h3>
-          <p>輸入以逗號、空白或換行分隔的數字，網站會即時計算。也可以載入本機 CSV；檔案不會上傳。</p>
-          <label for="numberInput">觀察值</label>
-          <textarea id="numberInput" rows="7">42, 48, 51, 47, 53, 58, 49, 46, 62, 55, 51, 44</textarea>
-          <div class="input-actions">
-            <label class="file-button">載入 CSV<input id="csvInput" type="file" accept=".csv,text/csv"></label>
-            <button class="secondary-button" id="analyzeButton" type="button">重新分析</button>
-          </div>
-          <p class="input-error" id="inputError" role="alert"></p>
-        </div>
-        <div class="computer-output">
-          <div class="stats-grid">
-            <div><span>筆數 n</span><strong id="statN">—</strong></div>
-            <div><span>平均數</span><strong id="statMean">—</strong></div>
-            <div><span>中位數</span><strong id="statMedian">—</strong></div>
-            <div><span>樣本標準差</span><strong id="statSd">—</strong></div>
-            <div><span>最小值</span><strong id="statMin">—</strong></div>
-            <div><span>最大值</span><strong id="statMax">—</strong></div>
-          </div>
-          <div class="histogram" id="histogram" aria-label="資料直方圖"></div>
-          <p class="computer-interpretation" id="computerInterpretation" aria-live="polite"></p>
-        </div>
-      </section>
-
-      <div class="human-checks reveal">
-        <article><span>01</span><h3>問題對嗎？</h3><p>精準算錯問題，仍然是錯。</p></article>
-        <article><span>02</span><h3>資料偏嗎？</h3><p>樣本與蒐集方式決定結論邊界。</p></article>
-        <article><span>03</span><h3>解讀合理嗎？</h3><p>相關不等於因果，顯著不等於重要。</p></article>
-      </div>
-    </section>
-
-    <section class="recap-section">
-      <p class="eyebrow">ONE-MINUTE RECAP</p>
-      <h2>統計學 = 從資料到判斷，<br>同時誠實面對不確定性。</h2>
-      <div class="recap-list">
-        <p><span>1.1</span>樣本統計量用來推估母體參數。</p>
-        <p><span>1.2</span>方法的價值，要落在可改善的決策。</p>
-        <p><span>1.3</span>大型資料先處理品質，再談規模。</p>
-        <p><span>1.4</span>電腦加速運算，人類負責提問與解讀。</p>
-      </div>
-      <a class="text-link" href="#top">回到章首 ↑</a>
     </section>
   </main>
 
   <footer>
-    <p>STAT/01 · 何謂統計學？</p>
-    <p>依 Chapter 1 教材重構；1.3、1.4 與互動案例為補充內容。</p>
+    <p>STATISTICS INTERACTIVE</p>
+    <span>互動式學習網站 · <span id="currentYear">2026</span></span>
   </footer>
+
   <script src="app.js"></script>
 </body>
 </html>
